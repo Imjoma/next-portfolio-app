@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import myImage from "../public/src/assets/DSC02160.jpg";
+import myImage from "../public/src/assets/DSC02160.JPG";
 import TechCategory from "../components/TechStack/TechCategory";
 import Certificate from "../components/Certificate/Certificate";
 import { BsArrowUpRight } from "react-icons/bs";
@@ -56,22 +56,22 @@ const about = () => {
             // style={{ height: "450px" }}
           >
             {/* Bio */}
-            <div className="relative   basis-1/2">
+            <div className="relative basis-1/2">
               {/* smaller heading */}
               <div className="pb-8 text-3xl font-bold capitalize dark:text-light text-dark">
                 Bio
               </div>
               {/* info */}
               {/* more info */}
-              <div className="relative pr-4 space-y-4 overflow-auto h-80  ">
-                <div className=" text-2xl flex pr-4  justify-start lg:justify-end  capitalize dark:text-light text-dark">
+              <div className="relative pr-4 space-y-4 overflow-auto h-80 ">
+                <div className="flex justify-start pr-4 text-2xl capitalize  lg:justify-end dark:text-light text-dark">
                   <div>Jose Maria Ipio</div>
                 </div>
-                <p className="indent-8 text-dark dark:text-light  opacity-80 text-justify">
+                <p className="text-justify indent-8 text-dark dark:text-light opacity-80">
                   In 2022, I graduated at ICCT Colleges equipped with a
                   Bachelor&apos;s Degree in Information Technology.
                 </p>
-                <p className="indent-8 text-dark dark:text-light opacity-80 text-justify ">
+                <p className="text-justify indent-8 text-dark dark:text-light opacity-80 ">
                   My main focus these days is to design and develop web
                   applications.
                 </p>
@@ -81,12 +81,12 @@ const about = () => {
                 <div className="w-full h-5 bg-light dark:bg-dark-400"></div>
                 <div className="w-full h-5 bg-light dark:bg-dark-400"></div> */}
               </div>
-              <div className=" absolute bottom-0 left-0  bg-gradient-to-t from:light dark:from-dark to-transparent w-full h-12"></div>
+              <div className="absolute bottom-0 left-0 w-full h-12  bg-gradient-to-t from:light dark:from-dark to-transparent"></div>
               {/* resume */}
               <a
                 href="/src/assets/cv/JoseMariaIpio-resume2021.pdf"
                 target="_blank"
-                className="absolute hover:opacity-70 flex flex-row space-x-2 pt-16  bottom-0    left-0 uppercase dark:text-light text-dark pointer"
+                className="absolute bottom-0 left-0 flex flex-row pt-16 space-x-2 uppercase hover:opacity-70 dark:text-light text-dark pointer"
               >
                 <span>resume</span>
                 <span className="text-md">
