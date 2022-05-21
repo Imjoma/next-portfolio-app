@@ -97,11 +97,6 @@ const about = () => {
                   My main focus these days is to design and develop web
                   applications.
                 </p>
-                {/* <div className="w-3/4 h-5 bg-light dark:bg-dark-400"></div>
-                <div className="w-full h-5 bg-light dark:bg-dark-400"></div>
-                <div className="w-full h-5 bg-light dark:bg-dark-400"></div>
-                <div className="w-full h-5 bg-light dark:bg-dark-400"></div>
-                <div className="w-full h-5 bg-light dark:bg-dark-400"></div> */}
               </div>
               <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from:light dark:from-dark to-transparent"></div>
               {/* resume */}
