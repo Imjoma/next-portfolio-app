@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import avatar from "../../public/src/assets/photo.webp";
 
+import { motion } from "framer-motion";
+import useScrollReveal from "../../config/useScrollReveal";
+import { stagger, fadeUp, fadeLeftHeading } from "../../config/animation";
+
 const Contact = () => {
   const classFirstMessage =
     "px-6 py-4 bg-light dark:bg-dark-500 w-fit rounded-tr-3xl rounded-br-3xl rounded-tl-3xl rounded-bl-md";
@@ -10,20 +14,23 @@ const Contact = () => {
   const classLastMessage =
     "px-6 py-4  bg-light dark:bg-dark-500 w-fit rounded-tr-3xl rounded-br-3xl rounded-bl-3xl rounded-tl-md";
 
+  const { ref, animation } = useScrollReveal();
+
   return (
     <>
-      {/* not a good practice, 12rem... consider the footer and the nav */}
-      <div
-      // style={{ height: "calc(100vh - 12.5rem" }}
-      >
+      <motion.div variants={stagger} animate={animation} ref={ref}>
         {/* headings */}
-        <div
+        <motion.div
           id="contact"
           className="pb-8 text-6xl font-bold pb dark:text-light text-dark"
+          variants={fadeLeftHeading}
         >
           Contact<span className="text-accent">.</span>
-        </div>
-        <div className="flex flex-col w-full px-4 text-center sm:w-3/5">
+        </motion.div>
+        <motion.div
+          className="flex flex-col w-full px-4 text-center sm:w-3/5"
+          variants={fadeUp}
+        >
           <div className="flex flex-row items-end gap-4 pb-4 border-b border-dark-500">
             {/* avatar images */}
             <div className="relative w-16 h-16 ">
@@ -45,12 +52,12 @@ const Contact = () => {
           {/* reply button */}
           <a
             href="mailto:jomaipio@gmail.com"
-            className="px-10 hover:bg-dark-200 py-4 my-4 ml-auto text-base uppercase w-fit md:text-lg text-light bg-dark-100"
+            className="px-10 py-4 my-4 ml-auto text-base uppercase duration-100 ease-out active:scale-98 hover:bg-dark-200 w-fit md:text-lg text-light bg-dark-100"
           >
             Send
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };

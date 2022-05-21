@@ -2,15 +2,27 @@ import Link from "next/link";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import { CgDarkMode } from "react-icons/cg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../public/src/assets/ioLogo.png";
 import Image from "next/image";
 
 import { useTheme } from "next-themes";
 
+import { motion } from "framer-motion";
+import { fadeLeft, fadeRight } from "../config/animation";
+
 const Navbar = () => {
   const [menu, setMenu] = useState(true);
   const { theme, setTheme } = useTheme();
+  // const [themeIcon, setThemeIcon] = useState(null);
+
+  // useEffect(() => {
+  //   if (theme === "dark") {
+  //     setThemeIcon(<BsFillSunFill />);
+  //   } else {
+  //     setThemeIcon(<BsFillMoonFill />);
+  //   }
+  // }, [theme]);
 
   const toggleTheme = () => {
     // if light? change to dark else light
@@ -19,7 +31,7 @@ const Navbar = () => {
 
   const Menu = () => {
     const className =
-      "block px-4 py-2 hover:opacity-70 hover:bg-light-500 text-sm rounded-sm  md:hover:dark:bg-transparent  hover:dark:bg-dark-400 dark:text-light ";
+      "block px-4 py-2 text-sm hover:opacity-70 md:rounded-md hover:bg-light-500 md:hover:dark:bg-transparent hover:dark:bg-dark-400 dark:text-light ";
 
     return (
       <>
@@ -58,7 +70,12 @@ const Navbar = () => {
       {/* available tw-class: max-w-screen-xl === max-width: 1280px; */}
       <nav className="flex items-center justify-between h-24 px-5 mx-auto font-medium backdrop-blur-lg bg-light-500/80 dark:bg-dark/90 md:px-20">
         {/* Left: Logo */}
-        <div className="">
+        <motion.div
+          className=""
+          variants={fadeLeft}
+          initial="initial"
+          animate="animate"
+        >
           <Link href="/">
             <a>
               <Image
@@ -71,31 +88,46 @@ const Navbar = () => {
               />
             </a>
           </Link>
-        </div>
+        </motion.div>
         {/* Right: NavLinks */}
-        <div className="items-center hidden space-x-2 text-sm md:flex text-dark dark:text-light">
+        <motion.div
+          className="items-center hidden space-x-2 text-sm md:flex text-dark dark:text-light"
+          variants={fadeRight}
+          initial="initial"
+          animate="animate"
+        >
           <Menu />
           <button
-            className="p-3 text-lg border border-dark dark:border-light rounded-lg "
+            aria-label="Theme Button"
+            className="p-3 text-lg duration-100 ease-out border rounded-lg active:scale-95 border-dark dark:border-light "
             onClick={() => toggleTheme()}
           >
             {/* error: always render moon icon every reload */}
             {/* {theme === "dark" ? <BsFillSunFill /> : <BsFillMoonFill />} */}
+            {/* {themeIcon} */}
             <CgDarkMode />
           </button>
-        </div>
+        </motion.div>
         {/* Right: Dark Mode and Menu */}
-        <div className="flex space-x-2 md:hidden text-dark dark:text-light">
+        <motion.div
+          className="flex space-x-2 md:hidden text-dark dark:text-light"
+          variants={fadeRight}
+          initial="initial"
+          animate="animate"
+        >
           <button
-            className="p-3 text-lg border border-dark dark:border-light rounded-lg "
+            aria-label="Theme Button"
+            className="p-3 text-lg duration-100 ease-out border rounded-lg active:scale-95 border-dark dark:border-light "
             onClick={() => toggleTheme()}
           >
             {/* error: always render moon icon every reload */}
             {/* {theme === "dark" ? <BsFillSunFill /> : <BsFillMoonFill />} */}
+            {/* {themeIcon} */}
             <CgDarkMode />
           </button>
           <button
-            className="relative p-2 text-2xl border border-dark dark:border-light rounded-lg"
+            aria-label="Menu Button"
+            className="relative p-2 text-2xl duration-100 ease-out border rounded-lg active:scale-95 border-dark dark:border-light"
             onClick={() => setMenu(!menu)}
           >
             {menu ? <IoMenu /> : <IoClose />}
@@ -106,7 +138,7 @@ const Navbar = () => {
               <Menu />
             </div>
           )}
-        </div>
+        </motion.div>
       </nav>
     </>
   );

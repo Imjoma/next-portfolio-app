@@ -46,22 +46,24 @@ const DesignCard = ({
 
   return (
     <>
-      <Image
-        src={image}
-        className="cursor-pointer "
-        alt="Design Image"
-        width="300"
-        height="180"
-        layout="responsive"
-        objectFit="cover"
-        onClick={() => handleOpenModal(id)}
-      />
+      <div className="duration-300 ease-out active:scale-98">
+        <Image
+          src={image}
+          className="cursor-pointer "
+          alt="Design Image"
+          width="300"
+          height="180"
+          layout="responsive"
+          objectFit="cover"
+          onClick={() => handleOpenModal(id)}
+        />
+      </div>
 
       {/* MODAL: */}
       {/* this pop-up modal will show when the user clicks any design cards */}
 
       {modal === id && (
-        <div className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-screen h-screen  bg-dark/80">
+        <div className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-screen h-screen bg-dark/80">
           {/* ToDo: pass the image here by creating a new component filtered by the click DesignCard */}
           <div className="relative w-full md:w-150 lg:w-200 lg:h-120">
             <Image

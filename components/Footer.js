@@ -8,21 +8,25 @@ const Footer = () => {
   const socials = [
     {
       id: 1,
+      name: "facebook",
       link: "https://www.facebook.com/joma.ipio.7/",
       icon: <FaFacebookF />,
     },
     {
       id: 2,
+      name: "instagram",
       link: "https://www.instagram.com/jomaipio/",
       icon: <RiInstagramFill />,
     },
     {
       id: 3,
+      name: "github",
       link: "https://github.com/Imjoma",
       icon: <BsGithub />,
     },
     {
       id: 4,
+      name: "linkedin",
       link: "https://www.linkedin.com/in/jose-maria-ipio-910a711b1/",
       icon: <FaLinkedin />,
     },
@@ -40,6 +44,7 @@ const Footer = () => {
             <div className="flex flex-row space-x-2 text-xl ">
               {socials.map((social) => (
                 <a
+                  aria-label={`Button Link for ${social.name}`}
                   key={social.id}
                   href={social.link}
                   target="_blank"
@@ -58,14 +63,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-{
-  /* <a
-href="https://www.facebook.com/joma.ipio.7/"
-target="_blank"
-rel="noreferrer"
-className="flex items-center justify-center p-2 rounded-full text-light bg-accent"
->
-<FaFacebookF />
-</a> */
-}

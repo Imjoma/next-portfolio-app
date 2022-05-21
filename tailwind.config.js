@@ -24,6 +24,10 @@ module.exports = {
           "100%": { transform: "translateY(-100%)" },
         },
       },
+      scale: {
+        93: ".93",
+        98: ".98",
+      },
       width: {
         100: " 30rem",
         101: " 32rem",

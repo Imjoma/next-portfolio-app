@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tailwind @apply directive */
+
+.greetings {
+  @apply p-3 text-base rounded-lg text-light bg-dark-500 md:text-lg w-fit;
+}
+
+.brandName {
+  @apply mt-6 text-4xl font-extrabold text-center dark:text-light text-dark-500 md:text-7xl md:text-left;
+}
+
+.info {
+  @apply mt-5 text-base font-medium md:text-lg;
+}
+
+.headerButton {
+  @apply relative py-4 text-base text-center uppercase duration-100 ease-out active:scale-98 hover:bg-dark-200 md:text-lg md:px-10 text-light bg-dark-100;
+}
+
 html {
   scroll-behavior: smooth;
   /* might change */

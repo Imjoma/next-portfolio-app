@@ -2,6 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import avatar from "../public/src/assets/photo.webp";
 
+import { motion } from "framer-motion";
+import { routeAnimation, fadeUp } from "../config/animation";
+
 const ContactPage = () => {
   const classFirstMessage =
     "px-6 py-4 bg-light dark:bg-dark-500 w-fit rounded-tr-3xl rounded-br-3xl rounded-tl-3xl rounded-bl-md";
@@ -17,7 +20,13 @@ const ContactPage = () => {
         <meta name="Frontend Developer Profile" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-w-screen-lg mx-auto text-light">
+      <motion.div
+        className="max-w-screen-lg mx-auto text-light"
+        variants={routeAnimation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         {/* headings */}
         <div
           className="pb-8 text-6xl font-bold dark:text-light text-dark"
@@ -26,7 +35,12 @@ const ContactPage = () => {
         >
           Contact
         </div>
-        <div className="flex flex-col w-full px-4 text-center sm:w-3/5">
+        <motion.div
+          className="flex flex-col w-full px-4 text-center sm:w-3/5"
+          variants={fadeUp}
+          initial="initial"
+          animate="animate"
+        >
           <div className="flex flex-row items-end gap-4 pb-4 border-b border-dark-500">
             {/* avatar images */}
             <div className="relative w-16 h-16 ">
@@ -48,12 +62,12 @@ const ContactPage = () => {
           {/* reply button */}
           <a
             href="mailto:jomaipio@gmail.com"
-            className="px-10 py-4 my-4 ml-auto hover:bg-dark-200 text-base uppercase w-fit md:text-lg text-light bg-dark-100"
+            className="px-10 py-4 my-4 ml-auto text-base uppercase duration-100 ease-out active:scale-98 hover:bg-dark-200 w-fit md:text-lg text-light bg-dark-100"
           >
             Send
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };

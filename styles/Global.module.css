@@ -1,13 +1,1 @@
-.techStack {
-  /* animation: infiniteScroll 20s linear infinite; */
-}
-
-@keyframes infiniteScroll {
-  0% {
-    transform: translateY(0%);
-  }
-
-  100% {
-    transform: translateY(-100%);
-  }
-}
+ 

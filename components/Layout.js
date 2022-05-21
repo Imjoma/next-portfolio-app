@@ -4,9 +4,10 @@ import { ThemeProvider } from "next-themes";
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
 
-const Layout = ({ children }) => {
-  useEffect(() => {});
+import { motion } from "framer-motion";
+import { slowFadeUp, introDelay, intro } from "../config/animation";
 
+const Layout = ({ children }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(1);
   const [curScrollPos, setCurScrollPos] = useState(0);
 
@@ -28,16 +29,26 @@ const Layout = ({ children }) => {
       {/* must be the same as darkMode in tailwind.config.js  */}
       <ThemeProvider attribute="class">
         {/* -translate-y-full toggle this with useeffect */}
-        <div
+        <motion.div
+          variants={intro}
+          initial="initial"
+          animate="animate"
           // ${prevScrollPos <= curScrollPos && "-translate-y-full"}
           className={`transition fixed z-50 w-full ${
             prevScrollPos <= curScrollPos && "-translate-y-full"
           }`}
         >
           <Navbar />
-        </div>
+        </motion.div>
         {/* max-w-screen-lg */}
-        <div className="px-5 mx-auto md:px-20">{children}</div>
+        <motion.div
+          variants={introDelay}
+          initial="initial"
+          animate="animate"
+          className="px-5 mx-auto md:px-20"
+        >
+          {children}
+        </motion.div>
         <Footer />
       </ThemeProvider>
     </>

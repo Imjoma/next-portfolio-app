@@ -1,57 +1,62 @@
 import React from "react";
 import Link from "next/link";
-import Button from "./Button";
+
+import { motion } from "framer-motion";
+import {
+  stagger,
+  slowFadeUp,
+  fadeUp,
+  delaySlowFadeUp,
+} from "../config/animation";
 
 const Header = () => {
   return (
     <>
       {/* bg-light dark:bg-dark" */}
       <div className="flex flex-col items-center h-full md:items-start justify-evenly md:justify-center text-dark-500 dark:text-light">
-        <div className="flex flex-col items-center md:items-start ">
+        <motion.div
+          className="flex flex-col items-center md:items-start "
+          variants={stagger}
+          initial="initial"
+          animate="animate"
+        >
           {/* greetings */}
-          <div className="p-3 text-base rounded-lg text-light bg-dark-500 md:text-lg w-fit">
+          <motion.div className="greetings" variants={slowFadeUp}>
             Hi, my name is Joma!
-          </div>
+          </motion.div>
           {/* brand name || name */}
-          <div className="mt-6 text-4xl font-extrabold text-center dark:text-light text-dark-500 md:text-7xl md:text-left">
+          <motion.div className="brandName" variants={slowFadeUp}>
             Jose Maria Ip<span className="text-accent">.io</span>
-          </div>
+          </motion.div>
           {/* short description || info */}
-          <div className="mt-5 text-base font-medium md:text-lg">
+          <motion.div className="info" variants={slowFadeUp}>
             22 | Developer and Designer | Philippines
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {/* cta */}
-        <div className="flex flex-col space-y-4 md:mt-20 w-60 md:w-full md:space-y-0 md:space-x-4 md:flex-row">
+        <motion.div
+          className="flex flex-col space-y-4 md:mt-20 w-60 md:w-full md:space-y-0 md:space-x-4 md:flex-row"
+          variants={delaySlowFadeUp}
+          initial="initial"
+          animate="animate"
+        >
           <Link href="#contact" passHref>
-            <Button buttonText="get in touch" />
+            <a href={"get in touch"} className="headerButton">
+              get in touch
+            </a>
           </Link>
-          <Button
+          <a
             href="/src/assets/cv/JoseMariaIpio-resume2021.pdf"
             target="_blank"
-            buttonText="Resume"
-          />
-        </div>
+            rel="noreferrer"
+            className="headerButton"
+          >
+            Resume
+          </a>
+        </motion.div>
       </div>
     </>
   );
 };
 
 export default Header;
-
-{
-  /* <div className="flex flex-col space-y-4 md:mt-20 w-60 md:w-full md:space-y-0 md:space-x-4 md:flex-row">
-          <Link href="#contact">
-            <a className="py-4 text-base text-center uppercase md:text-lg md:px-10 text-light bg-dark-100">
-              get in touch
-            </a>
-          </Link>
-          <a
-            href="/src/assets/cv/JoseMariaIpio-resume2021.pdf"
-            download="JoseMariaIpio-resume2021.pdf"
-            className="py-4 text-base text-center uppercase md:text-lg md:px-10 text-light bg-dark-100"
-          >
-            resume
-          </a>
-        </div> */
-}

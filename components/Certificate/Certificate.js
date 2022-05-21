@@ -7,7 +7,7 @@ const Certificate = () => {
       {certificates.map((cert) => (
         <div
           key={cert.id}
-          className="flex flex-row justify-between gap-2 p-4 capitalize border rounded-lg border-dark-500   dark:text-light md:p-6"
+          className="flex flex-row justify-between gap-2 p-4 capitalize border rounded-lg select-none bg-light dark:bg-dark border-dark-500 dark:text-light md:p-6"
         >
           {/* left */}
           <div className="flex flex-col basis-full">
@@ -26,7 +26,7 @@ const Certificate = () => {
               href={cert.file}
               target="_blank"
               rel="noreferrer"
-              className="p-3 text-xl border rounded-lg hover:border-light border-dark-500 "
+              className="p-3 text-xl duration-100 ease-out rounded-lg dark:bg-dark-200 hover:dark:bg-dark-400 bg-light-100 active:scale-95 hover:bg-light-200"
             >
               <FaFilePdf />
             </a>

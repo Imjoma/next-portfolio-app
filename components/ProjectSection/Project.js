@@ -2,26 +2,39 @@ import React from "react";
 import { projects } from "../../helper/data";
 import ProjectCard from "./ProjectCard";
 
+import { motion } from "framer-motion";
+import useScrollReveal from "../../config/useScrollReveal";
+import { fadeUp, fadeLeftHeading, stagger } from "../../config/animation";
+
 const Project = () => {
+  const { ref, animation } = useScrollReveal();
   return (
     <>
-      <section id="projects" className="w-full text-dark dark:text-light">
+      <motion.section
+        id="projects"
+        className="w-full text-dark dark:text-light"
+        variants={stagger}
+        animate={animation}
+      >
         {/* headings */}
-        <div className="pb-8 text-6xl font-bold dark:text-light text-dark">
+        <motion.div
+          className="pb-8 text-6xl font-bold dark:text-light text-dark"
+          ref={ref}
+          variants={fadeLeftHeading}
+        >
           Projects<span className="text-accent">.</span>
-        </div>
+        </motion.div>
         {/* grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <motion.div
+          className="grid grid-cols-1 gap-6 md:grid-cols-2"
+          ref={ref}
+          variants={fadeUp}
+        >
           {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              //   showDetail={showDetail}
-              //   setShowDetail={setShowDetail}
-            />
+            <ProjectCard key={project.id} project={project} />
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </>
   );
 };

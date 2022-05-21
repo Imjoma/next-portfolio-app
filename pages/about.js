@@ -5,6 +5,15 @@ import TechCategory from "../components/TechStack/TechCategory";
 import Certificate from "../components/Certificate/Certificate";
 import { BsArrowUpRight } from "react-icons/bs";
 
+import { motion } from "framer-motion";
+import {
+  fadeUp,
+  fadeLeft,
+  fadeRight,
+  stagger,
+  routeAnimation,
+} from "../config/animation";
+
 const about = () => {
   return (
     <>
@@ -16,7 +25,13 @@ const about = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-w-screen-lg mx-auto text-light">
+      <motion.div
+        className="max-w-screen-lg mx-auto text-light"
+        variants={routeAnimation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         {/* headings */}
         <div
           className="pb-8 text-6xl font-bold dark:text-light text-dark"
@@ -28,7 +43,12 @@ const about = () => {
         {/* header */}
         <div className="flex flex-col gap-0 lg:flex-row lg:gap-8">
           {/* header:left */}
-          <div className="pb-24 basis-2/5 lg:pb-0">
+          <motion.div
+            className="pb-24 basis-2/5 lg:pb-0"
+            variants={fadeLeft}
+            initial="initial"
+            animate="animate"
+          >
             {/* smaller heading */}
             <div className="pb-8 text-3xl font-bold capitalize dark:text-light text-dark">
               motto
@@ -49,11 +69,13 @@ const about = () => {
               </span>{" "}
               <span className=" opacity-80">will follow</span>”
             </div>
-          </div>
+          </motion.div>
           {/* header:right ...info and image */}
-          <div
-            className="relative flex flex-col-reverse gap-2 pb-4 pl-4 border-l-none border-b-none lg:border-b lg:border-l lg:flex-row basis-3/5"
-            // style={{ height: "450px" }}
+          <motion.div
+            className="relative flex flex-col-reverse gap-2 pb-4 pl-4 border-dark dark:border-light lg:border-b lg:border-l lg:flex-row basis-3/5"
+            variants={fadeRight}
+            initial="initial"
+            animate="animate"
           >
             {/* Bio */}
             <div className="relative basis-1/2">
@@ -64,7 +86,7 @@ const about = () => {
               {/* info */}
               {/* more info */}
               <div className="relative pr-4 space-y-4 overflow-auto h-80 ">
-                <div className="flex justify-start pr-4 text-2xl capitalize  lg:justify-end dark:text-light text-dark">
+                <div className="flex justify-start pr-4 text-2xl capitalize lg:justify-end dark:text-light text-dark">
                   <div>Jose Maria Ipio</div>
                 </div>
                 <p className="text-justify indent-8 text-dark dark:text-light opacity-80">
@@ -81,12 +103,12 @@ const about = () => {
                 <div className="w-full h-5 bg-light dark:bg-dark-400"></div>
                 <div className="w-full h-5 bg-light dark:bg-dark-400"></div> */}
               </div>
-              <div className="absolute bottom-0 left-0 w-full h-12  bg-gradient-to-t from:light dark:from-dark to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from:light dark:from-dark to-transparent"></div>
               {/* resume */}
               <a
                 href="/src/assets/cv/JoseMariaIpio-resume2021.pdf"
                 target="_blank"
-                className="absolute bottom-0 left-0 flex flex-row pt-16 space-x-2 uppercase hover:opacity-70 dark:text-light text-dark pointer"
+                className="absolute bottom-0 left-0 flex flex-row pt-16 space-x-2 uppercase duration-100 ease-out origin-bottom-left active:scale-98 hover:opacity-70 dark:text-light text-dark pointer"
               >
                 <span>resume</span>
                 <span className="text-md">
@@ -110,7 +132,7 @@ const about = () => {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         {/* tech stack */}
         <div className="pt-24 dark:text-light text-dark">
@@ -134,7 +156,7 @@ const about = () => {
             <Certificate />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

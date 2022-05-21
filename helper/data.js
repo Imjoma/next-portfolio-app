@@ -100,7 +100,7 @@ export const projects = [
     image_path: "/src/assets/projects/color-yoinker.png",
     figma_url: "",
     github_url: "https://github.com/Imjoma/react-color-yoinker",
-    deployed_url: "https://extraordinary-squirrel-2aa822.netlify.app",
+    deployed_url: "https://color-yoinker.netlify.app/",
     category: ["react"],
     key_techs: [
       "React",
@@ -117,31 +117,31 @@ export const projects = [
       'save at <span  class="bold">Local Storage</span>',
     ],
   },
-  {
-    id: 2,
-    name: "2",
-    field: "2",
-    description:
-      "an awesome color picker the let everyone create their own palette.",
-    image_path: "/src/assets/projects/color-yoinker.png",
-    github_url: "https://github.com/Imjoma/react-color-yoinker",
-    deployed_url: "https://extraordinary-squirrel-2aa822.netlify.app",
-    category: ["react"],
-    key_techs: [
-      "React",
-      "CSS",
-      "uuid",
-      "react-color",
-      "react-copy-to-clipboard",
-    ],
-    version: "1.0",
-    duration: "March 19, 2022",
-    features: [
-      'a color palette app inspired from <a href="https://flatuicolors.com/" className="underline">Flat UI Colors.</a>',
-      "added a <span className='text-white'>Create Pallete</span> feature",
-      "save at <span className='text-white'>Local Storage</span>",
-    ],
-  },
+  // {
+  //   id: 2,
+  //   name: "2",
+  //   field: "2",
+  //   description:
+  //     "an awesome color picker the let everyone create their own palette.",
+  //   image_path: "/src/assets/projects/color-yoinker.png",
+  //   github_url: "https://github.com/Imjoma/react-color-yoinker",
+  //   deployed_url: "https://extraordinary-squirrel-2aa822.netlify.app",
+  //   category: ["react"],
+  //   key_techs: [
+  //     "React",
+  //     "CSS",
+  //     "uuid",
+  //     "react-color",
+  //     "react-copy-to-clipboard",
+  //   ],
+  //   version: "1.0",
+  //   duration: "March 19, 2022",
+  //   features: [
+  //     'a color palette app inspired from <a href="https://flatuicolors.com/" className="underline">Flat UI Colors.</a>',
+  //     "added a <span className='text-white'>Create Pallete</span> feature",
+  //     "save at <span className='text-white'>Local Storage</span>",
+  //   ],
+  // },
 ];
 
 export const tech_stacks = [
