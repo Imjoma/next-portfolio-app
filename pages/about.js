@@ -89,11 +89,11 @@ const about = () => {
                 <div className="flex justify-start pr-4 text-2xl capitalize lg:justify-end dark:text-light text-dark">
                   <div>Jose Maria Ipio</div>
                 </div>
-                <p className="text-justify indent-8 text-dark dark:text-light opacity-80">
+                <p className="text-justify text-md indent-8 text-dark dark:text-light opacity-80">
                   In 2022, I graduated at ICCT Colleges equipped with a
                   Bachelor&apos;s Degree in Information Technology.
                 </p>
-                <p className="text-justify indent-8 text-dark dark:text-light opacity-80 ">
+                <p className="text-justify text-md indent-8 text-dark dark:text-light opacity-80">
                   My main focus these days is to design and develop web
                   applications.
                 </p>

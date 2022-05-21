@@ -26,6 +26,12 @@ html {
   font-size: 16px;
 }
 
+button,
+a,
+.card {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   background: #010101;
   font-family: "Poppins", sans-serif;

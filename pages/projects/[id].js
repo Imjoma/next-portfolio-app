@@ -90,7 +90,7 @@ const ProjectDetails = ({
       >
         {/* back */}
         <Link href="/projects" passHref>
-          <a className="flex flex-row items-center text-lg font-medium text-accent">
+          <a className="flex flex-row items-center text-lg font-medium duration-100 ease-out select-none active:scale-95 w-fit text-accent">
             Projects <BiChevronRight />
           </a>
         </Link>

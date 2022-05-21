@@ -71,7 +71,7 @@ const Navbar = () => {
       <nav className="flex items-center justify-between h-24 px-5 mx-auto font-medium backdrop-blur-lg bg-light-500/80 dark:bg-dark/90 md:px-20">
         {/* Left: Logo */}
         <motion.div
-          className=""
+          className="select-none "
           variants={fadeLeft}
           initial="initial"
           animate="animate"
@@ -79,7 +79,7 @@ const Navbar = () => {
           <Link href="/">
             <a>
               <Image
-                className=""
+                className="duration-100 ease-out active:scale-95"
                 src={logo}
                 alt="website logo"
                 width="56"
@@ -99,7 +99,7 @@ const Navbar = () => {
           <Menu />
           <button
             aria-label="Theme Button"
-            className="p-3 text-lg duration-100 ease-out border rounded-lg active:scale-95 border-dark dark:border-light "
+            className="p-3 text-lg duration-100 ease-out border rounded-lg select-none active:scale-95 border-dark dark:border-light "
             onClick={() => toggleTheme()}
           >
             {/* error: always render moon icon every reload */}
@@ -117,7 +117,7 @@ const Navbar = () => {
         >
           <button
             aria-label="Theme Button"
-            className="p-3 text-lg duration-100 ease-out border rounded-lg active:scale-95 border-dark dark:border-light "
+            className="p-3 text-lg duration-100 ease-out border rounded-lg select-none active:scale-95 border-dark dark:border-light "
             onClick={() => toggleTheme()}
           >
             {/* error: always render moon icon every reload */}
@@ -127,7 +127,7 @@ const Navbar = () => {
           </button>
           <button
             aria-label="Menu Button"
-            className="relative p-2 text-2xl duration-100 ease-out border rounded-lg active:scale-95 border-dark dark:border-light"
+            className="relative p-2 text-2xl duration-100 ease-out border rounded-lg select-none active:scale-95 border-dark dark:border-light"
             onClick={() => setMenu(!menu)}
           >
             {menu ? <IoMenu /> : <IoClose />}

@@ -11,7 +11,7 @@ const ProjectCard = ({
     <>
       <Link href={"/projects/" + id} passHref>
         <motion.div
-          className="relative flex flex-col gap-6 p-4 overflow-hidden duration-300 ease-out border rounded-lg cursor-pointer select-none active:scale-98 bg-light dark:bg-dark lg:gap-12 group lg:flex-row border-light hover:border-dark dark:border-dark-500 dark:hover:border-light dark:text-light "
+          className="relative flex flex-col gap-6 p-4 overflow-hidden duration-300 ease-out border rounded-lg cursor-pointer select-none card active:scale-98 bg-light dark:bg-dark lg:gap-12 group lg:flex-row border-light hover:border-dark dark:border-dark-500 dark:hover:border-light dark:text-light "
           variants={cardsStagger}
           initial="initial"
           animate="animate"
