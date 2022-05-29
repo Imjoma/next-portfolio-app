@@ -101,8 +101,9 @@ const about = () => {
               <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from:light dark:from-dark to-transparent"></div>
               {/* resume */}
               <a
-                href="/src/assets/cv/JoseMariaIpio-resume2021.pdf"
+                href="https://drive.google.com/file/d/1gOL_rMlRzTJr1aYOhjYysqinFu0f8XG_/view"
                 target="_blank"
+                rel="noreferrer"
                 className="absolute bottom-0 left-0 flex flex-row pt-16 space-x-2 uppercase duration-100 ease-out origin-bottom-left active:scale-98 hover:opacity-70 dark:text-light text-dark pointer"
               >
                 <span>resume</span>

@@ -46,7 +46,7 @@ const Header = () => {
             </a>
           </Link>
           <a
-            href="/src/assets/cv/JoseMariaIpio-resume2021.pdf"
+            href="https://drive.google.com/file/d/1gOL_rMlRzTJr1aYOhjYysqinFu0f8XG_/view"
             target="_blank"
             rel="noreferrer"
             className="headerButton"

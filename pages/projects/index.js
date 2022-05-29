@@ -7,7 +7,6 @@ import { routeAnimation } from "../../config/animation";
 
 export const getStaticProps = async () => {
   const data = projects;
-
   return {
     props: { data },
   };
